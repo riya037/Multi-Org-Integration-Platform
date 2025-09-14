@@ -70,7 +70,8 @@ const connectDB = async () => {
       }, 5000);
     } else {
       console.error('Full error:', error);
-    process.exit(1);
+      process.exit(1);
+    }
   }
 };
 
