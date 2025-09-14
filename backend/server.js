@@ -34,20 +34,42 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// MongoDB Connection (Free MongoDB Atlas)
+// MongoDB Connection (Free MongoDB Atlas with fallback)
 const connectDB = async () => {
   try {
     const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/multiorg-integration';
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      maxPoolSize: 5, // Limit connections for free tier
-      serverSelectionTimeoutMS: 5000,
+    
+    // Enhanced connection options for free tier
+    const options = {
+      maxPoolSize: 5,
+      serverSelectionTimeoutMS: 30000, // 30 seconds
       socketTimeoutMS: 45000,
-    });
-    console.log('MongoDB Connected Successfully');
+      family: 4, // Force IPv4
+      retryWrites: true,
+      w: 'majority'
+    };
+    
+    console.log('Attempting MongoDB connection...');
+    console.log('MongoDB URI (partial):', mongoUri.replace(/\/\/.*:.*@/, '//***:***@'));
+    
+    await mongoose.connect(mongoUri, options);
+    console.log('✅ MongoDB Connected Successfully');
+    
+    // Test the connection
+    await mongoose.connection.db.admin().ping();
+    console.log('✅ MongoDB ping successful');
+    
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    console.error('❌ MongoDB connection error:', error.message);
+    
+    // If it's a DNS error, try alternative approach
+    if (error.code === 'ENOTFOUND') {
+      console.log('🔄 DNS resolution failed, retrying in 5 seconds...');
+      setTimeout(() => {
+        process.exit(1); // Let Render restart the service
+      }, 5000);
+    } else {
+      console.error('Full error:', error);
     process.exit(1);
   }
 };
