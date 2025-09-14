@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operation__c</fullName>
+    <description>Type of operation performed during integration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The type of operation: CREATE, UPDATE, DELETE, or UPSERT</inlineHelpText>
+    <label>Operation</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CREATE</fullName>
+                <default>false</default>
+                <label>CREATE</label>
+            </value>
+            <value>
+                <fullName>UPDATE</fullName>
+                <default>false</default>
+                <label>UPDATE</label>
+            </value>
+            <value>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+                <label>DELETE</label>
+            </value>
+            <value>
+                <fullName>UPSERT</fullName>
+                <default>false</default>
+                <label>UPSERT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

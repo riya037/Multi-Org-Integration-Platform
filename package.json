@@ -1,0 +1,31 @@
+{
+  "name": "multi-org-integration-platform",
+  "version": "1.0.0",
+  "description": "AI-powered Salesforce multi-org integration platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "build-frontend": "cd frontend && npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riya037/Multi-Org-Integration-Platform.git"
+  },
+  "keywords": [
+    "salesforce",
+    "integration",
+    "ai",
+    "multi-org",
+    "platform",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Riya Singh <singh.riya037200@gmail.com>",
+  "license": "MIT"
+}

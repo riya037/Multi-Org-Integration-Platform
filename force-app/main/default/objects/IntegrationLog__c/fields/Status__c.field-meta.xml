@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Status of the integration operation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Current status: SUCCESS, FAILED, CONFLICT, or PROCESSING</inlineHelpText>
+    <label>Status</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SUCCESS</fullName>
+                <default>false</default>
+                <label>SUCCESS</label>
+            </value>
+            <value>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+                <label>FAILED</label>
+            </value>
+            <value>
+                <fullName>CONFLICT</fullName>
+                <default>false</default>
+                <label>CONFLICT</label>
+            </value>
+            <value>
+                <fullName>PROCESSING</fullName>
+                <default>false</default>
+                <label>PROCESSING</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

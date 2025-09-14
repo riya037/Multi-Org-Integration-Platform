@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration__c</fullName>
+    <description>Reference to the Integration Configuration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The integration configuration this log entry relates to</inlineHelpText>
+    <label>Integration</label>
+    <referenceTo>IntegrationConfig__c</referenceTo>
+    <relationshipLabel>Integration Logs</relationshipLabel>
+    <relationshipName>IntegrationLogs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

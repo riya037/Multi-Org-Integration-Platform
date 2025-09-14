@@ -1,0 +1,49 @@
+{
+  "name": "multi-org-integration-dashboard",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/api/(.*)",
+      "status": 404,
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://multi-org-integration-backend.onrender.com/api"
+  },
+  "build": {
+    "env": {
+      "REACT_APP_API_URL": "https://multi-org-integration-backend.onrender.com/api",
+      "REACT_APP_VERSION": "1.0.0",
+      "REACT_APP_ENVIRONMENT": "production"
+    }
+  },
+  "functions": {
+    "build": {
+      "maxDuration": 300
+    }
+  },
+  "regions": ["iad1"],
+  "framework": "create-react-app"
+}

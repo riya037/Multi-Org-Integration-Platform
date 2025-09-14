@@ -1,0 +1,33 @@
+# Render.com deployment configuration
+services:
+  - type: web
+    name: multi-org-integration-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard
+      - key: FRONTEND_URL
+        value: https://multi-org-integration.vercel.app
+      - key: DEMO_MODE
+        value: true
+      - key: ENABLE_AI_FEATURES
+        value: true
+      - key: ENABLE_REAL_TIME
+        value: true
+      - key: LOG_LEVEL
+        value: info
+    regions:
+      - oregon  # US West (cheaper)
+    scaling:
+      minInstances: 0  # Free tier auto-sleep
+      maxInstances: 1
+    autoDeploy: true
+    branch: main
