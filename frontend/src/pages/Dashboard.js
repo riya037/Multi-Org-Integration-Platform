@@ -231,7 +231,7 @@ const Dashboard = ({ appData, isConnected }) => {
   }
 
   return (
-    <div className="space-y-6 fade-in">
+    <div className="space-y-4 fade-in">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -283,7 +283,7 @@ const Dashboard = ({ appData, isConnected }) => {
       )}
 
       {/* Key metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
           title="Total Integrations"
           value={dashboardData.overview.totalIntegrations}
@@ -311,7 +311,7 @@ const Dashboard = ({ appData, isConnected }) => {
       </div>
 
       {/* Charts section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Success rate chart */}
         <div className="card">
           <div className="card-header">

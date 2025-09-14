@@ -70,11 +70,11 @@
   }
   
   .card-header {
-    @apply px-6 py-4 border-b border-gray-200 bg-gray-50;
+    @apply px-4 py-3 border-b border-gray-200 bg-gray-50;
   }
   
   .card-body {
-    @apply px-6 py-4;
+    @apply px-4 py-3;
   }
   
   .card-footer {
@@ -268,7 +268,7 @@
   /* Chart container styles */
   .chart-container {
     position: relative;
-    height: 300px;
+    height: 250px;
     width: 100%;
   }
   
