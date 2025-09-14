@@ -16,7 +16,7 @@ class SocketService {
     try {
       const serverUrl = process.env.REACT_APP_API_URL?.replace('/api', '') || 
         process.env.NODE_ENV === 'production' 
-          ? 'https://multi-org-integration-backend.onrender.com'
+          ? 'https://multi-org-integration-platform-645l.onrender.com'
           : 'http://localhost:3000';
 
       console.log('Connecting to socket server:', serverUrl);

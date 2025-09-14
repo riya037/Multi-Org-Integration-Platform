@@ -277,7 +277,7 @@ const About = () => {
                   <ExternalLink className="w-3 h-3" />
                 </a>
                 <a 
-                  href="https://multi-org-integration-backend.onrender.com/api"
+                  href="https://multi-org-integration-platform-645l.onrender.com/api"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"

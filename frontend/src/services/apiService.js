@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 // API configuration
 const API_BASE_URL = process.env.REACT_APP_API_URL || 
   process.env.NODE_ENV === 'production' 
-    ? 'https://multi-org-integration-backend.onrender.com/api'
+    ? 'https://multi-org-integration-platform-645l.onrender.com/api'
     : 'http://localhost:3000/api';
 
 // Create axios instance with default configuration
